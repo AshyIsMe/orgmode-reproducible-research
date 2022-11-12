@@ -1,0 +1,6 @@
+* Reproducible Research with orgmode
+
+
+** Inspired by https://www.jstatsoft.org/article/view/v046i03
+
+** TODO gnu guix

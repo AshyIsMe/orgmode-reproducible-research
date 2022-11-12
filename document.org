@@ -1,0 +1,94 @@
+#+title: A Reproducible Research Document
+#+AUTHOR: Author One, Writer Two
+#+Date:
+#+OPTIONS: ^:nil toc:nil H:4
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{attrib}
+#+LATEX_HEADER: \Plainauthor{Author One, Writer Two}
+#+LATEX_HEADER: \author{Author One\\University of Some Place \And Write Two\\University of Another Place}
+#+LATEX_HEADER: \title{A Reproducible Research Document}
+#+LATEX_HEADER: \Keywords{literate programming, reproducible research, compendium, web, emacs.}
+\begin{abstract}
+A template repo to quickly get up and running with an environment for authoring reproducible research papers. Heavily inspired by Schulte, E., Davison, D., Dye, T., & Dominik, C. (2012). A Multi-Language Computing Environment for Literate Programming and Reproducible Research. Journal of Statistical Software, 46(3), 1–24. https://doi.org/10.18637/jss.v046.i03
+\end{abstract}
+\pagebreak
+#+STARTUP: oddeven
+
+* Introduction
+This is intended to be a nice simple template repository that can be cloned
+as a starting point for new reproducible research documents including embedded
+code and data with a literate programming style.
+
+- Org-mode
+- LaTeX
+- GNU Guix
+- NixOS
+
+\begin{tikzpicture}
+\draw[gray, thick] (-1,2) -- (2,-4);
+\draw[gray, thick] (-1,-1) -- (2,2);
+\filldraw[black] (0,0) circle (2pt) node[anchor=west]{Intersection point};
+\end{tikzpicture}
+
+** Literate programming
+
+#+begin_quote
+
+There are a variety of settings in which it is desirable to mix prose,
+code, data, and computational results in a single document.
+
+\attrib{\citealt{JSSv046i03}}
+
+#+end_quote
+
+* Example chunks
+
+** Tables
+
+Tables like so:
+
+#+label: tab:table1
+#+Caption: A simple table
+| A | B   |    C |
+|---+-----+------|
+| 1 | abc | 3.14 |
+| 2 | def | 3.14 |
+| 3 | ghi | 3.14 |
+
+...
+
+** Code Blocks
+*** Python
+
+#+begin_src python :exports both
+def hello():
+    return "Hello World"
+
+hello()
+#+end_src
+
+#+RESULTS:
+: None
+
+
+*** Dot
+
+
+    #+name: flowchart
+    #+headers: :file flowchart.svg :cmdline -Tsvg
+    #+begin_src dot :exports results
+    graph {
+        a -- b -- c -- d;
+    }
+    #+end_src
+
+    #+RESULTS: flowchart
+    [[file:flowchart.svg]]
+
+
+
+* Closing
+
+#+begin_LaTeX
+  \bibliography{document}
+#+end_LaTeX
