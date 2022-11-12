@@ -1,3 +1,3 @@
 
 (specifications->manifest
-  (list "emacs" "python" "graphviz" "make"))
+  (list "emacs" "emacs-org" "python" "graphviz" "make" "texlive"))
