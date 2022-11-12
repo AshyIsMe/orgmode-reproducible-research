@@ -3,4 +3,15 @@
 
 ** Inspired by https://www.jstatsoft.org/article/view/v046i03
 
-** TODO gnu guix
+* Usage
+
+#+begin_src shell
+sudo apt install guix
+
+guix shell -m ./manifest.scm
+make
+#+end_src
+
+** DONE gnu guix
+** TODO get dot working
+** TODO get bibliography working
