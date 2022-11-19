@@ -1,12 +1,14 @@
 #+title: A Reproducible Research Document
 #+AUTHOR: Author One, Writer Two
 #+Date:
+#+bibliography: document.bibtex
+#+cite_export: basic numeric
 #+OPTIONS: ^:nil toc:nil H:4
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{attrib}
 #+LATEX_HEADER: \Plainauthor{Author One, Writer Two}
 #+LATEX_HEADER: \author{Author One\\University of Some Place \And Write Two\\University of Another Place}
-#+LATEX_HEADER: \title{A Reproducible Research Document}
+#+LATEX_HEADER: \title{A Reproducible Research Document Template}
 #+LATEX_HEADER: \Keywords{literate programming, reproducible research, compendium, web, emacs.}
 \begin{abstract}
 A template repo to quickly get up and running with an environment for authoring reproducible research papers. Heavily inspired by Schulte, E., Davison, D., Dye, T., & Dominik, C. (2012). A Multi-Language Computing Environment for Literate Programming and Reproducible Research. Journal of Statistical Software, 46(3), 1–24. https://doi.org/10.18637/jss.v046.i03
@@ -37,7 +39,7 @@ code and data with a literate programming style.
 There are a variety of settings in which it is desirable to mix prose,
 code, data, and computational results in a single document.
 
-\attrib{\citealt{JSSv046i03}}
+[cite:@JSSv046i03]
 
 #+end_quote
 
@@ -75,20 +77,20 @@ hello()
 
 
     #+name: flowchart
-    #+headers: :file flowchart.svg :cmdline -Tsvg
+    #+headers: :file flowchart.png :cmdline -Tpng -Gsize=1,2\! -Gdpi=300
     #+begin_src dot :exports results
     graph {
         a -- b -- c -- d;
     }
     #+end_src
 
+    #+attr_org: :width 50px
+    #+attr_latex: :width 50px
     #+RESULTS: flowchart
-    [[file:flowchart.svg]]
+    [[file:flowchart.png]]
 
 
 
-* Closing
 
-#+begin_LaTeX
-  \bibliography{document}
-#+end_LaTeX
+* References
+#+print_bibliography:
